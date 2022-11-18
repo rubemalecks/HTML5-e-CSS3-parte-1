@@ -1,17 +1,12 @@
 
-body {
-    background: #CCCCCC;
-}
-
-h1 {
-    text-align: center
+body{
+    background-color: #CCCCCC
 }
 
 p {
-    text-align: center;
-    
-}   
+    text-align: center; font-size:20px
+}
 
-em strong {
+em strong{
     color: red;
 }

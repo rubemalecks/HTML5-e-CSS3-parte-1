@@ -1,115 +1,70 @@
-# HTML and tags
+# CSS  (Cascading Style Sheet, ou Folha de Estilo em Cascatas)
 
-> UMA PAGINA WEB UTILIZA DE <TAGS> DE MARCAÇÃO PARA MOSTRAR DE FORMA MAIS ORGANIZADA AS INFORMAÇÕES ALI DESTACADAS.
-
-- em html podemos usar subtags dentro de tags
-
-````html
-<tag> <subtag> </subtag> <tag>
-````
-
-## TITULOS `<h1></h1>`
-> existem 6 niveis de titulo.
-tag "h1": heading
-
-```HTML
-<h1>Exemplo de um titulo</h1>
-```
-### NOTE QUE AO ABRIR UMA TAG, NECESSARIAMENTE PRECISAMOS TAMBEM FECHAR PARA DEFINIR O SEU FINAL.
+#### Para mexer na apresentação visual dos elementos usamos CSS
 
 
-## PARAGRAFOS `<p></p>`
-
-```HTML
-<p>Exemplo de um paragrafo</p>
-<p>Exemplo de um paragrafo</p>
-<p>Exemplo de um paragrafo</p>
-```
-
-## NEGRITO `<strong></strong>`
-
-```HTML
-<h1>Exemplo de um titulo</h1>
-<p>Exemplo de um paragrafo em <strong>negrito</strong></p>
-```
-
-## ITALICO (ENFASE) `<em></em>`
+## CSS inline 
+Exemplo se quisermos alterar um paragrafo.
+- Primeiro iremos na abertura da tag do paragrafo dentro do body
+- Adicionamos a propriedade style:
 ```html
-<p><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes".</strong></em></p>
+<h1 style="text-align: center"> Sobre a Barbearia Alura</h1>
 ```
+- Alinhou o texto ao centro
 
-# TAGS ESTRUTURAIS
-## TAG DOCTYPE `<!DOCTYPE>`
-
+outro:
 
 ```html
-<!DOCTYPE HTML5>
+<p style="font-size:20px; text-align: center">
 ```
-- Ela vem no topo do arquivo.
-- Visto que essa tag não carrega conteúdo, só passando uma informação, sendo assim ela não é fechada ao final.
-- O "5" neste caso é opcional visto que é a ultima versão disponível do html.
-- Visualmente não vemos mudança ... todavia, por houve uma mudança muito brusca no entendimento do navegador sobre esta pagina.
+- Aumentou a fonte; alinhou ao centro.
+    - ( ; ) funcionando como separador.
 
+>> "Legal", porém pouco usual pois se tivesse 100x paragrafos teriamos que repetir 100x os comandos de style. Tem jeito melhor! ...
 
-# TAG HTML `<HTML></HTML>`
+# TAG style (dentro da passagem de informação/ dentro da head)
+syntax:
+````html
+<style>
+    subtag {
+        propriedade: param_propried
+    }
+</style>
+````
+exemplo:
+````html
+<style>
+    p {
+        text-align: center; font-size:20px
+    }
+</style>
+````
+A propriedade definida no CSS vai ser aplicada em todos os paragrafos.
+
+# OUTRA FORMA É COM UM ARQUVO CSS EXTERNO PERSONALIZADO
 
 ````html
-    <html>
-
-    </html>
-````
-- Serve para definir o que vai ser renderizado no navegador
-- Como é uma tag que vai levar conteúdo, precisamos abrir e fecha-la ao final.
-- Identar as subtags de html.
-
-# TAG meta charset
-- Por padrão usamos:
-
-```html
-    <meta charset="UTF-8">
-```
-- A tag meta passa uma informação
-    - Neste caso colocamos uma propriedade dentro.
-        - charset = Conjunto de Caracteres UTF8
-### Sendo assim podemos voltar a tag html para também definir o idioma principal da pagina.
-
-````html
-    <html lang ="pt-br">
-
-    </html>
-````
-## TAG title `<title></title>`
-````html
-    <title> TITULO DO TOPO </title>
-````
-Olhando nosso index, além das definições e informações(html, doctype, meta, title) só declaramos o "cabeçalho"/h1 e "paragrafos"/p. 
-
-![basicofinal](reademeprevia.png)
-
-# informações -> na cabeça, elementos -> corpo
-
-## abaixo da tag html precisa haver duas principais tags
-
-- head (info)
-- body (elementos)
-
-Dentro da tag head ficaram outras tags (meta, title) e dentro de body (h1, p, em, strong e etc)
-
-```html
-<!DOCTYPE html>
-
-<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <title>Barbearia Alura</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+````
+- usando a tag link e no arquivo "CSS" passaremos a propriedade e seus parametro, da mesma forma.
 
-    <h1> Barbearia Alura</h1>
+**style.css** :
+````css
+    p {
+        text-align: center; 
+    }
+````
 
-    <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba.Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
-
-    <p><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes".</strong></em></p>
-
-    <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
-</html>
-```
-
-## Caso use o live server(vscode) só a partido deste momento de definição da head e body ele vai conseguir atualizar o chrome sempre que algo novo for salvo.
+- mudar propriedades em elementos especificos:
+````css
+    em strong {
+        color: red;
+    }
+````
+Alterou somente "nos strong que estão dentro da tag em".
