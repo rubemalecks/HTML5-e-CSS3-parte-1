@@ -5,14 +5,14 @@
 
 ## CSS inline 
 Exemplo se quisermos alterar um paragrafo.
-- Primeiro iremos na abertura da tag do paragrafo dentro do body
+- Primeiro iremos na abertura da escolhida dentro do body
 - Adicionamos a propriedade style:
 ```html
 <h1 style="text-align: center"> Sobre a Barbearia Alura</h1>
 ```
 - Alinhou o texto ao centro
 
-outro:
+outro exemplo com um paragrafo especifico:
 
 ```html
 <p style="font-size:20px; text-align: center">
